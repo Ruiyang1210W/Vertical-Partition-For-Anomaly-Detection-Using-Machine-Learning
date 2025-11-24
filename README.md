@@ -14,7 +14,7 @@
 - ## 📈 Results Summary
 
 - Achieved up to **5.5× speedup** using 8 processors
-- Best performance observed at **16–32 processors**
+- Best performance observed at **16–32 processors** (~217× speedup)
 - Results aligned with **Amdahl’s Law**: more processors helped until communication overhead increased
 
 ## Future Work
