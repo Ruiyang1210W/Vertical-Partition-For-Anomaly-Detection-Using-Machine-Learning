@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Data files (large datasets)
+*.csv
+*.dat
+*.npy
+# Keep only the experimental subset
+!balancedTestData.csv
+# Exclude full CIC-IDS dataset (2.76GB+)
+*ISCX*.csv
+*IDS2017*.csv
+
+# Output files
+custom_output.npy
+pytorch_output.npy
+*.log
+*.out
+
+# OS
+Thumbs.db
+.DS_Store
+
+# MPI temporary files
+*.mpi_*
+
+# Research drafts (keep final PDFs)
+*draft*.pdf
+*temp*.pdf
