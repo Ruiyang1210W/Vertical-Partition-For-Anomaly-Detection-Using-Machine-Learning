@@ -235,9 +235,8 @@ This work was completed as part of a research fellowship at **Cal Poly Pomona** 
 
 ### Related Works
 
-- **Full Research Report**: [`PROCESSOR PARTITIONING FOR ANOMALY DETECTION USING MACHINE LEARNING.pdf`](./PROCESSOR%20PARTITIONING%20FOR%20ANOMALY%20DETECTION%20USING%20MACHINE%20LEARNING.pdf)
-- **Presentation Slides**:
-  - [PDF Version](./Anomaly%20Detection%20Vertical%20Partition%20Report.pdf) 
+- **Presentation Slide**: [`PROCESSOR PARTITIONING FOR ANOMALY DETECTION USING MACHINE LEARNING.pdf`](./PROCESSOR%20PARTITIONING%20FOR%20ANOMALY%20DETECTION%20USING%20MACHINE%20LEARNING.pdf)
+- **Full Research Report**: [PDF Version](./Anomaly%20Detection%20Vertical%20Partition%20Report.pdf) 
 
 ---
 
