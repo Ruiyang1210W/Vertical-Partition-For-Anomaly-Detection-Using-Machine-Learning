@@ -3,7 +3,7 @@ import numpy as np
 
 def load_and_preprocess(csv_path, label_column="Label", desired_features=100):
     # Load data
-    df = pd.read_csv("C:/Users/wangr/OneDrive/Desktop/Senior project resourses/Vertical Partition/BalancedTestData.csv")
+    df = pd.read_csv(csv_path)
     df = df.dropna()
     df = df.replace([np.inf, -np.inf], 0)
 

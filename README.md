@@ -8,7 +8,7 @@ This project implements a **custom-built deep neural network from scratch** with
 
 ### Key Achievements
 
-- **~217× speedup** over serial baseline (32 processors)
+- **~217× speedup** over serial baseline with 32 processors (small batch sizes)
 - **Mathematical parity** with PyTorch reference implementation (validated through output comparison)
 - **Built from scratch** - no high-level frameworks, full control over architecture
 - **Scalable architecture** tested across 4-64 processors
@@ -83,11 +83,22 @@ For this research, experiments were conducted using a balanced subset (`balanced
 
 ### Runtime Comparison
 
-| Samples (n) | Serial (s) | MPI 32-proc (s) | **Speedup** |
-|-------------|------------|-----------------|-------------|
-| 5           | 0.102218   | 0.00047         | **~217×**   |
-| 10          | 0.102218   | 0.000569        | **~180×**   |
-| 100         | 0.102218   | 0.004293        | **~24×**    |
+**Serial Baseline:** 0.102218 seconds (200-layer network, non-parallelized)
+
+**MPI Performance Across Network Depths (32 processors):**
+
+| Layers (n) | Runtime (s) | Relative to Baseline |
+|------------|-------------|----------------------|
+| 5          | 0.00047     | **~217× faster**     |
+| 10         | 0.000569    | **~180× faster**     |
+| 20         | 0.000968    | **~106× faster**     |
+| 40         | 0.001799    | **~57× faster**      |
+| 50         | 0.002723    | **~38× faster**      |
+| 100        | 0.004293    | **~24× faster**      |
+
+*Runtime performance of MPI-parallelized forward propagation across varying network depths, demonstrating scalability with respect to a 200-layer serial baseline. 100-dimensional input vertically partitioned across 32 processors.*
+
+**Note:** These results demonstrate MPI's ability to achieve significant runtime reductions across different network configurations. The comparison uses a fixed serial baseline (200 layers) as a reference point to illustrate the performance gains from parallelization. Absolute execution times vary across systems due to CPU load, caching, and hardware differences.
 
 ### Speedup Analysis
 
@@ -203,9 +214,10 @@ Uses **deterministic random seeding** (`seed=55`) via `sharedParameter.py` to en
 
 ### Current Limitations
 
-- ⚠️ **Forward pass only** - No backpropagation/training implemented yet
-- ⚠️ **Output discrepancy** - 0.29 MAE vs PyTorch (likely floating-point precision/weight alignment)
-- ⚠️ **No autoencoder** - Planned extension for anomaly detection
+-  **Forward pass only** - No backpropagation/training implemented yet
+- **Benchmarking methodology** - Serial baseline uses fixed 200-layer configuration; future work should include layer-matched serial comparisons for each MPI test
+- **Output discrepancy** - 0.29 MAE vs PyTorch (likely floating-point precision/weight alignment)
+- **autoencoder** - Planned extension for anomaly detection
 
 ### Roadmap
 
@@ -226,8 +238,7 @@ This work was completed as part of a research fellowship at **Cal Poly Pomona** 
 
 - **Full Research Report**: [`PROCESSOR PARTITIONING FOR ANOMALY DETECTION USING MACHINE LEARNING.pdf`](./PROCESSOR%20PARTITIONING%20FOR%20ANOMALY%20DETECTION%20USING%20MACHINE%20LEARNING.pdf)
 - **Presentation Slides**:
-  - [View on Google Slides](https://docs.google.com/presentation/d/1_7tjPeLq2DHzszy5KHrw42hgbglpq-hP62UN1d6C2KM/edit?slide=id.p#slide=id.p) (interactive)
-  - [PDF Version](./Anomaly%20Detection%20Vertical%20Partition%20Report.pdf) (offline access)
+  - [PDF Version](./Anomaly%20Detection%20Vertical%20Partition%20Report.pdf) 
 
 ---
 

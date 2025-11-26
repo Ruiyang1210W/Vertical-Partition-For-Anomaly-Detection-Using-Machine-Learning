@@ -26,7 +26,7 @@ size = comm.Get_size()
 # --------------------------
 # 0. Load and Normalize Data
 # --------------------------
-csv_path = "C:/Users/wangr/OneDrive/Desktop/Senior project resourses/Vertical Partition/BalancedTestData.csv"
+csv_path = "balancedTestData.csv"
 desired_feature = 100
 
 if rank == 0:

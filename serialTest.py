@@ -6,7 +6,7 @@ from sharedParameter import generate_shared_parameters
 from data_preprocessing import load_and_preprocess
 
 # === Load Data ===
-csv_path = "C:/Users/wangr/OneDrive/Desktop/Senior project resourses/Vertical Partition/BalancedTestData.csv"
+csv_path = "balancedTestData.csv"
 X_np, _, _, _ = load_and_preprocess(csv_path, label_column="Label", desired_features=100)
 
 # === Build Full Serial Model ===
