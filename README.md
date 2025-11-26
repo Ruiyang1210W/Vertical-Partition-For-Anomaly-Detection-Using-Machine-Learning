@@ -101,8 +101,7 @@ For this research, experiments were conducted using a balanced subset (`balanced
 **Note:** These results demonstrate MPI's ability to achieve significant runtime reductions across different network configurations. The comparison uses a fixed serial baseline (200 layers) as a reference point to illustrate the performance gains from parallelization. Absolute execution times vary across systems due to CPU load, caching, and hardware differences.
 
 ### Speedup Analysis
-
-![Speedup Chart](https://via.placeholder.com/600x400?text=Speedup+vs+Processors)
+<img width="600" height="400" alt="speed up chart" src="https://github.com/user-attachments/assets/f9aa8373-617e-4d4d-868c-2b693ea73996" />
 
 **Key Findings:**
 - **Optimal performance**: 16-32 processors
