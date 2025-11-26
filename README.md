@@ -10,7 +10,6 @@
 - **CIC-IDS 2017**, totally have 5.9M samples, 85 features after combination
 - Subset: 800+ rows and 10 features (including label)  to simulate realistic data
 flow and evaluate runtime behavior.
-- Used to simulate realistic input for performance testing
 
 - ## 📈 Results Summary
 
